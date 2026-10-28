@@ -1,0 +1,162 @@
+:root {
+  --bg: #fff7f9;
+  --card: #ffffff;
+  --pink: #f6c9d4;
+  --pink-light: #fbe9ee;
+  --accent: #e0607e;
+  --accent-dark: #c94a69;
+  --text: #4a3b40;
+  --muted: #9a868c;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-notice {
+  margin: 0;
+  padding: 6px 16px;
+  background: var(--pink-light);
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.site-header {
+  padding: 28px 16px 12px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 8px 16px 24px;
+}
+
+.status {
+  margin: 40px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.status:empty { display: none; }
+
+.products {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--pink-light);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(224, 96, 126, 0.08);
+}
+
+.card-image {
+  flex: 0 0 96px;
+  width: 96px;
+  height: 96px;
+  border-radius: 10px;
+  background: var(--pink-light);
+  object-fit: cover;
+}
+
+.card-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-meta {
+  margin: 4px 0 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.card-date {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.card-button {
+  margin-top: auto;
+  display: block;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card-button:active { background: var(--accent-dark); }
+
+.site-footer {
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--pink);
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0;
+  word-break: auto-phrase;
+}
