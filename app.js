@@ -71,10 +71,18 @@
     return li;
   }
 
+  // 日本時間の今日（"2026-10-31"）
+  function todayJst() {
+    return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  }
+
   function render(products) {
+    // 投稿日（added）がまだ来ていない商品は出さない（土日祝日の分は前の平日に登録するため）
+    var today = todayJst();
     // 新しい順。同じ日付なら後から追加したものを上にする
     var sorted = products
       .map(function (p, i) { return { p: p, i: i }; })
+      .filter(function (item) { return !item.p.added || item.p.added <= today; })
       .sort(function (a, b) {
         var da = a.p.added || "", db = b.p.added || "";
         if (da !== db) return da < db ? 1 : -1;
